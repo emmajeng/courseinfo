@@ -1,0 +1,17 @@
+
+<%= simple_form_for(@course) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :course_type, :collection => %w[BSHC HDIP] %>
+    <%= f.input :duration %>
+    <%= f.association :profile, label_method: :lastname, :collection => Profile.where(:role => "Lecturer") %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: "deviseBtn"   %>
+  </div>
+<% end %>

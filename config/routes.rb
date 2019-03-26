@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :courses
   resources :profiles
   devise_for :users
   get 'about/info'

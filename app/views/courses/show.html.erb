@@ -1,0 +1,31 @@
+<%= render 'layouts/navbar' %>
+<div class="form-wrap">
+
+<p>
+  <strong>Title:</strong>
+  <%= @course.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @course.description %>
+</p>
+
+<p>
+  <strong>Course type:</strong>
+  <%= @course.course_type %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @course.duration %>
+</p>
+
+<p>
+  <strong>Lecturer:</strong>
+  <%= @course.profile.lastname  %>
+</p>
+
+<%= link_to 'Edit', edit_course_path(@course) %> |
+<%= link_to 'Back', courses_path %>
+</div>

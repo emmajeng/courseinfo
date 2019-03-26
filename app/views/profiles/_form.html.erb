@@ -7,14 +7,7 @@
     <%= f.input :firstname %>
     <%= f.input :lastname %>
     <%= f.input :address %>
-    <label>User Type</label>
-    <br/>
-    <select id="select" name="Profile[firstname]">
-      <option>Lecturer</option>
-      <option>Staff</option>
-      <option>Administrator</option>
-    </select>
-  <br>
+    <%= f.input :role, :collection => %w[Lecturer Staff Admin] %>
    <%= f.association :user %>
   </div>
   <div class="form-actions">

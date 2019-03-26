@@ -28,4 +28,24 @@
 
 <%= link_to 'Edit', edit_course_path(@course) %> |
 <%= link_to 'Back', courses_path %>
+
+<!-- Display the reviews of a movie -->
+<h2>Assignments</h2>
+<% @course.assignments.each do |assignment| %>
+<p>
+<hr>
+<p>
+  <strong>Name:</strong>
+  <%= assignment.name %>
+  <br>
+  <strong>Worth:</strong>
+  <%= assignment.worth %>
+  <br>
+   <td><%= link_to 'Show', assignment %></td>
+   <td><%= link_to 'Edit', edit_assignment_path(assignment) %></td>
+</p>
+</p>
+
+<% end %>
+
 </div>

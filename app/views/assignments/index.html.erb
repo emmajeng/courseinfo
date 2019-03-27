@@ -1,5 +1,8 @@
+
+<%= render 'layouts/navbar' %>
 <p id="notice"><%= notice %></p>
 
+<div class="form-wrap"> 
 <h1>Listing Assignments</h1>
 
 <table>
@@ -21,7 +24,7 @@
         <td><%= assignment.due_date %></td>
         <td><%= assignment.worth %></td>
         <td><%= assignment.result %></td>
-        <td><%= assignment.course %></td>
+        <td><%= assignment.course.title %></td>
         <td><%= link_to 'Show', assignment %></td>
         <td><%= link_to 'Edit', edit_assignment_path(assignment) %></td>
         <td><%= link_to 'Destroy', assignment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -33,3 +36,5 @@
 <br>
 
 <%= link_to 'New Assignment', new_assignment_path %>
+
+</div>

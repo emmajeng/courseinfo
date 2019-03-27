@@ -1,5 +1,11 @@
 <%= render 'layouts/navbar' %>
+
+<p id="notice"><%= notice %></p>
+<p id="alert"><%= alert %></p>
+
 <div class="form-wrap">
+
+<h2 style="text-align:center">Course Details</h2>
 
 <p>
   <strong>Title:</strong>
@@ -29,7 +35,12 @@
 <%= link_to 'Edit', edit_course_path(@course) %> |
 <%= link_to 'Back', courses_path %>
 
+
 <!-- Display the reviews of a movie -->
+
+<br>
+<br>
+
 <h2>Assignments</h2>
 <% @course.assignments.each do |assignment| %>
 <p>

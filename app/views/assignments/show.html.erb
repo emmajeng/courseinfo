@@ -1,5 +1,12 @@
-<p id="notice"><%= notice %></p>
 
+<%= render 'layouts/navbar' %>
+<p id="notice"><%= notice %></p>
+<p id="alert"><%= alert %></p>
+
+<div class="form-wrap"> 
+  
+<h2 style="text-align:center">Assignment Details</h2>
+  
 <p>
   <strong>Name:</strong>
   <%= @assignment.name %>
@@ -22,8 +29,9 @@
 
 <p>
   <strong>Course:</strong>
-  <%= @assignment.course %>
+  <%= @assignment.course.title %>
 </p>
 
 <%= link_to 'Edit', edit_assignment_path(@assignment) %> |
 <%= link_to 'Back', assignments_path %>
+</div>

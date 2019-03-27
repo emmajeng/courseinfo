@@ -5,4 +5,4 @@ class SessionsController < Devise::SessionsController
         #the path for the user's profile end
     end
     
-    
+end 

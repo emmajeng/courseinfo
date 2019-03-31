@@ -6118,3 +6118,832 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 60ms (Views: 55.2ms | ActiveRecord: 0.6ms)
 
 
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from <top (required)> at /home/ubuntu/workspace/app/models/user.rb:1)
+Started GET "/" for 51.37.113.161 at 2019-03-31 17:00:50 +0000
+Cannot render console from 51.37.113.161! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendered devise/menu/_registration_items.html.erb (2.3ms)
+  Rendered devise/menu/_login_items.html.erb (1.1ms)
+  Rendered partials/_navbar.html.erb (48.6ms)
+  Rendered home/index.html.erb within layouts/application (52.1ms)
+  Rendered partials/_footer.html.erb (0.7ms)
+Completed 200 OK in 439ms (Views: 326.1ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/profiles" for 51.37.113.161 at 2019-03-31 17:00:58 +0000
+Cannot render console from 51.37.113.161! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.5ms)
+
+
+  
+NoMethodError (undefined method `decorate' for #<User:0x007f6214934d60>):
+  
+app/controllers/profiles_controller.rb:7:in `index'
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/profiles" for 51.37.113.161 at 2019-03-31 17:02:51 +0000
+Cannot render console from 51.37.113.161! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.5ms)
+
+
+  
+NoMethodError (undefined method `decorate' for #<User:0x007f62146e0960>):
+  
+app/controllers/profiles_controller.rb:7:in `index'
+Started GET "/profiles" for 51.37.113.161 at 2019-03-31 17:02:58 +0000
+Cannot render console from 51.37.113.161! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendered devise/menu/_registration_items.html.erb (0.7ms)
+  Rendered devise/menu/_login_items.html.erb (0.7ms)
+  Rendered partials/_navbar.html.erb (17.9ms)
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered profiles/index.html.erb within layouts/application (26.2ms)
+  Rendered partials/_footer.html.erb (0.6ms)
+Completed 200 OK in 93ms (Views: 71.3ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/" for 51.37.113.161 at 2019-03-31 17:08:43 +0000
+Cannot render console from 51.37.113.161! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendered devise/menu/_registration_items.html.erb (2.0ms)
+  Rendered devise/menu/_login_items.html.erb (1.0ms)
+  Rendered partials/_navbar.html.erb (9.1ms)
+  Rendered home/index.html.erb within layouts/application (13.0ms)
+  Rendered partials/_footer.html.erb (1.7ms)
+Completed 200 OK in 75ms (Views: 67.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/courses" for 51.37.113.161 at 2019-03-31 17:08:46 +0000
+Cannot render console from 51.37.113.161! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoursesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendered devise/menu/_registration_items.html.erb (0.8ms)
+  Rendered devise/menu/_login_items.html.erb (0.7ms)
+  Rendered partials/_navbar.html.erb (6.2ms)
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered courses/index.html.erb within layouts/application (25.3ms)
+  Rendered partials/_footer.html.erb (0.7ms)
+Completed 200 OK in 84ms (Views: 72.4ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 51.37.113.161 at 2019-03-31 17:08:47 +0000
+Cannot render console from 51.37.113.161! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendered devise/menu/_registration_items.html.erb (0.9ms)
+  Rendered devise/menu/_login_items.html.erb (2.0ms)
+  Rendered partials/_navbar.html.erb (8.6ms)
+  Rendered home/index.html.erb within layouts/application (11.8ms)
+  Rendered partials/_footer.html.erb (0.7ms)
+Completed 200 OK in 68ms (Views: 62.9ms | ActiveRecord: 0.7ms)
+
+
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from <top (required)> at /home/ubuntu/workspace/app/models/user.rb:1)
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from <top (required)> at /home/ubuntu/workspace/app/models/user.rb:1)
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from <top (required)> at /home/ubuntu/workspace/app/models/user.rb:1)
+Started GET "/" for 51.37.113.161 at 2019-03-31 17:36:22 +0000
+Cannot render console from 51.37.113.161! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendered devise/menu/_registration_items.html.erb (0.8ms)
+  Rendered devise/menu/_login_items.html.erb (3.2ms)
+  Rendered partials/_navbar.html.erb (22.5ms)
+  Rendered home/index.html.erb within layouts/application (24.3ms)
+  Rendered partials/_footer.html.erb (0.7ms)
+Completed 200 OK in 110ms (Views: 88.4ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/profiles/1" for 51.37.113.161 at 2019-03-31 17:36:28 +0000
+Cannot render console from 51.37.113.161! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendered devise/menu/_registration_items.html.erb (0.8ms)
+  Rendered devise/menu/_login_items.html.erb (0.8ms)
+  Rendered partials/_navbar.html.erb (6.6ms)
+  Rendered profiles/show.html.erb within layouts/application (19.6ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::ProfileDecorator):
+    1: <%= render 'partials/navbar' %>
+    2: 
+    3: <% user = ProfileDecorator.new(@profile, self) %>
+    4: <h1><%= user.full_name %></h1>
+    5: 
+    6: <p style="text-align:center" class="notice"><%= notice %></p>
+  
+app/views/profiles/show.html.erb:3:in `_app_views_profiles_show_html_erb___1432595918358545116_70029671991040'
+Started GET "/profiles/1" for 51.37.113.161 at 2019-03-31 17:39:42 +0000
+Cannot render console from 51.37.113.161! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendered devise/menu/_registration_items.html.erb (0.7ms)
+  Rendered devise/menu/_login_items.html.erb (0.8ms)
+  Rendered partials/_navbar.html.erb (11.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered profiles/show.html.erb within layouts/application (15.6ms)
+  Rendered partials/_footer.html.erb (0.8ms)
+Completed 200 OK in 95ms (Views: 62.1ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/profiles/1" for 51.37.113.161 at 2019-03-31 17:45:54 +0000
+Cannot render console from 51.37.113.161! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendered devise/menu/_registration_items.html.erb (1.0ms)
+  Rendered devise/menu/_login_items.html.erb (1.0ms)
+  Rendered partials/_navbar.html.erb (8.8ms)
+  Rendered profiles/show.html.erb within layouts/application (20.2ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::MasterDecorator):
+     7:   
+     8:   <h2 style="text-align:center">Profile Details</h2>
+     9:   
+    10:   <li><p>User :<%=  MasterDecorator.new(@profile).concat_first_name_last_name %></p></li>
+    11:   
+    12:   
+    13: <p>
+  
+app/views/profiles/show.html.erb:10:in `_app_views_profiles_show_html_erb___1432595918358545116_70029612283220'
+Started GET "/profiles/1" for 51.37.113.161 at 2019-03-31 17:46:36 +0000
+Cannot render console from 51.37.113.161! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendered devise/menu/_registration_items.html.erb (0.7ms)
+  Rendered devise/menu/_login_items.html.erb (0.8ms)
+  Rendered partials/_navbar.html.erb (5.9ms)
+  Rendered profiles/show.html.erb within layouts/application (13.5ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::ProfileDecorator):
+     7:   
+     8:   <h2 style="text-align:center">Profile Details</h2>
+     9:   
+    10:   <li><p>User :<%=  ProfileDecorator.new(@profile).concat_first_name_last_name %></p></li>
+    11:   
+    12:   
+    13: <p>
+  
+app/views/profiles/show.html.erb:10:in `_app_views_profiles_show_html_erb___1432595918358545116_70029663934460'
+Started GET "/profiles" for 51.37.113.161 at 2019-03-31 17:46:52 +0000
+Cannot render console from 51.37.113.161! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendered devise/menu/_registration_items.html.erb (0.8ms)
+  Rendered devise/menu/_login_items.html.erb (2.0ms)
+  Rendered partials/_navbar.html.erb (7.5ms)
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered profiles/index.html.erb within layouts/application (12.7ms)
+  Rendered partials/_footer.html.erb (0.7ms)
+Completed 200 OK in 86ms (Views: 80.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/profiles/1" for 51.37.113.161 at 2019-03-31 17:46:55 +0000
+Cannot render console from 51.37.113.161! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendered devise/menu/_registration_items.html.erb (1.0ms)
+  Rendered devise/menu/_login_items.html.erb (0.8ms)
+  Rendered partials/_navbar.html.erb (11.9ms)
+  Rendered profiles/show.html.erb within layouts/application (19.6ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::ProfileDecorator):
+     7:   
+     8:   <h2 style="text-align:center">Profile Details</h2>
+     9:   
+    10:   <li><p>User :<%=  ProfileDecorator.new(@profile).concat_first_name_last_name %></p></li>
+    11:   
+    12:   
+    13: <p>
+  
+app/views/profiles/show.html.erb:10:in `_app_views_profiles_show_html_erb___1432595918358545116_70029613350340'
+Started GET "/profiles/1" for 51.37.113.161 at 2019-03-31 17:47:18 +0000
+Cannot render console from 51.37.113.161! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendered devise/menu/_registration_items.html.erb (0.8ms)
+  Rendered devise/menu/_login_items.html.erb (3.5ms)
+  Rendered partials/_navbar.html.erb (8.8ms)
+  Rendered profiles/show.html.erb within layouts/application (16.3ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::ProfileDecorator):
+     7:   
+     8:   <h2 style="text-align:center">Profile Details</h2>
+     9:   
+    10:   <li><p>User :<%=  ProfileDecorator.new(@profile).concat_first_name_last_name %></p></li>
+    11:   
+    12:   
+    13: <p>
+  
+app/views/profiles/show.html.erb:10:in `_app_views_profiles_show_html_erb___1432595918358545116_70029673303440'
+Started GET "/profiles/1" for 51.37.113.161 at 2019-03-31 17:48:39 +0000
+Cannot render console from 51.37.113.161! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendered devise/menu/_registration_items.html.erb (0.7ms)
+  Rendered devise/menu/_login_items.html.erb (0.7ms)
+  Rendered partials/_navbar.html.erb (7.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered profiles/show.html.erb within layouts/application (11.3ms)
+  Rendered partials/_footer.html.erb (0.7ms)
+Completed 200 OK in 64ms (Views: 57.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/profiles/1" for 51.37.113.161 at 2019-03-31 17:48:42 +0000
+Cannot render console from 51.37.113.161! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendered devise/menu/_registration_items.html.erb (0.8ms)
+  Rendered devise/menu/_login_items.html.erb (0.7ms)
+  Rendered partials/_navbar.html.erb (6.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered profiles/show.html.erb within layouts/application (9.7ms)
+  Rendered partials/_footer.html.erb (0.6ms)
+Completed 200 OK in 63ms (Views: 56.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/courses" for 51.37.113.161 at 2019-03-31 17:48:50 +0000
+Cannot render console from 51.37.113.161! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoursesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendered devise/menu/_registration_items.html.erb (0.8ms)
+  Rendered devise/menu/_login_items.html.erb (0.7ms)
+  Rendered partials/_navbar.html.erb (6.7ms)
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered courses/index.html.erb within layouts/application (25.1ms)
+  Rendered partials/_footer.html.erb (0.6ms)
+Completed 200 OK in 83ms (Views: 71.8ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/courses/1" for 51.37.113.161 at 2019-03-31 17:48:53 +0000
+Cannot render console from 51.37.113.161! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendered devise/menu/_registration_items.html.erb (0.7ms)
+  Rendered devise/menu/_login_items.html.erb (0.6ms)
+  Rendered partials/_navbar.html.erb (5.4ms)
+  Rendered courses/show.html.erb within layouts/application (12.6ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::ProfileDecorator):
+    27:   <%= @course.duration %>
+    28: </p>
+    29: 
+    30: <li><p>Hello :<%=  ProfileDecorator.new(@course.user.profile).concat_first_name_last_name %></p></li>
+    31: 
+    32: <p>
+    33:   <strong>Lecturer:</strong>
+  
+app/views/courses/show.html.erb:30:in `_app_views_courses_show_html_erb___1650310671095761604_70029649180200'
+Started GET "/courses/1" for 51.37.113.161 at 2019-03-31 17:49:11 +0000
+Cannot render console from 51.37.113.161! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendered devise/menu/_registration_items.html.erb (0.8ms)
+  Rendered devise/menu/_login_items.html.erb (0.8ms)
+  Rendered partials/_navbar.html.erb (6.1ms)
+  Rendered courses/show.html.erb within layouts/application (15.0ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::ProfileDecorator):
+    27:   <%= @course.duration %>
+    28: </p>
+    29: 
+    30: <li><p>Hello :<%=  ProfileDecorator.new(@course.profile).concat_first_name_last_name %></p></li>
+    31: 
+    32: <p>
+    33:   <strong>Lecturer:</strong>
+  
+app/views/courses/show.html.erb:30:in `_app_views_courses_show_html_erb___1650310671095761604_70029614954260'
+Started GET "/assignments" for 51.37.113.161 at 2019-03-31 17:52:48 +0000
+Cannot render console from 51.37.113.161! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AssignmentsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering assignments/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendered devise/menu/_registration_items.html.erb (0.8ms)
+  Rendered devise/menu/_login_items.html.erb (2.1ms)
+  Rendered partials/_navbar.html.erb (7.9ms)
+  [1m[36mAssignment Load (0.3ms)[0m  [1m[34mSELECT "assignments".* FROM "assignments"[0m
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered assignments/index.html.erb within layouts/application (25.2ms)
+  Rendered partials/_footer.html.erb (0.6ms)
+Completed 200 OK in 82ms (Views: 69.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assignments/1" for 51.37.113.161 at 2019-03-31 17:52:50 +0000
+Cannot render console from 51.37.113.161! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AssignmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAssignment Load (0.3ms)[0m  [1m[34mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering assignments/show.html.erb within layouts/application
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendered devise/menu/_registration_items.html.erb (3.4ms)
+  Rendered devise/menu/_login_items.html.erb (0.8ms)
+  Rendered partials/_navbar.html.erb (9.0ms)
+  Rendered assignments/show.html.erb within layouts/application (19.2ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::OPecorator):
+    18: </p>
+    19: 
+    20:  
+    21:   <li><p>Date : <%= OPecorator.new(@assignment).display_time_for_appointment %> </p>
+    22: 
+    23: 
+    24: <p>
+  
+app/views/assignments/show.html.erb:21:in `_app_views_assignments_show_html_erb___1429897153038740008_70029610927360'
+Started GET "/assignments/1" for 51.37.113.161 at 2019-03-31 17:54:09 +0000
+Cannot render console from 51.37.113.161! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AssignmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAssignment Load (0.3ms)[0m  [1m[34mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering assignments/show.html.erb within layouts/application
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendered devise/menu/_registration_items.html.erb (0.9ms)
+  Rendered devise/menu/_login_items.html.erb (0.8ms)
+  Rendered partials/_navbar.html.erb (7.0ms)
+  Rendered assignments/show.html.erb within layouts/application (16.1ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::OPecorator):
+    18: </p>
+    19: 
+    20:  
+    21:   <li><p>Date : <%= OPecorator.new(@assignment).display_time_for_appointment %> </p>
+    22: 
+    23: 
+    24: <p>
+  
+app/views/assignments/show.html.erb:21:in `_app_views_assignments_show_html_erb___1429897153038740008_70029662947500'
+Started GET "/assignments/1" for 51.37.113.161 at 2019-03-31 17:56:27 +0000
+Cannot render console from 51.37.113.161! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AssignmentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAssignment Load (0.2ms)[0m  [1m[34mSELECT  "assignments".* FROM "assignments" WHERE "assignments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering assignments/show.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendered devise/menu/_registration_items.html.erb (0.8ms)
+  Rendered devise/menu/_login_items.html.erb (1.0ms)
+  Rendered partials/_navbar.html.erb (6.9ms)
+  Rendered assignments/show.html.erb within layouts/application (18.7ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::OPecorator):
+    18: </p>
+    19: 
+    20:  
+    21:   <li><p>Date : <%= OPecorator.new(@assignment).display_time %> </p>
+    22: 
+    23: 
+    24: <p>
+  
+app/views/assignments/show.html.erb:21:in `_app_views_assignments_show_html_erb___1429897153038740008_70029675815960'
+Started GET "/profiles" for 51.37.113.161 at 2019-03-31 18:12:35 +0000
+Cannot render console from 51.37.113.161! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendered devise/menu/_registration_items.html.erb (0.7ms)
+  Rendered devise/menu/_login_items.html.erb (7.0ms)
+  Rendered partials/_navbar.html.erb (13.5ms)
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered profiles/index.html.erb within layouts/application (18.9ms)
+  Rendered partials/_footer.html.erb (0.5ms)
+Completed 200 OK in 76ms (Views: 67.3ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/profiles/1" for 51.37.113.161 at 2019-03-31 18:12:38 +0000
+Cannot render console from 51.37.113.161! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendered devise/menu/_registration_items.html.erb (0.8ms)
+  Rendered devise/menu/_login_items.html.erb (0.7ms)
+  Rendered partials/_navbar.html.erb (6.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered profiles/show.html.erb within layouts/application (10.6ms)
+  Rendered partials/_footer.html.erb (0.8ms)
+Completed 200 OK in 63ms (Views: 57.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/profiles/1" for 51.37.113.161 at 2019-03-31 18:25:17 +0000
+Cannot render console from 51.37.113.161! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendered devise/menu/_registration_items.html.erb (0.8ms)
+  Rendered devise/menu/_login_items.html.erb (0.8ms)
+  Rendered partials/_navbar.html.erb (7.5ms)
+  Rendered profiles/show.html.erb within layouts/application (17.5ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 1.8ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::OPDecorator):
+     8:   <h2 style="text-align:center">Profile Details</h2>
+     9:   
+    10: <h2 style="text-align:center;">
+    11:   <%= OPDecorator.new(@profile).full_name %>
+    12: </h2>
+    13:   
+    14: <p>
+  
+app/views/profiles/show.html.erb:11:in `_app_views_profiles_show_html_erb___1432595918358545116_70029613998920'
+Started GET "/profiles/1" for 51.37.113.161 at 2019-03-31 18:26:20 +0000
+Cannot render console from 51.37.113.161! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendered devise/menu/_registration_items.html.erb (2.0ms)
+  Rendered devise/menu/_login_items.html.erb (1.5ms)
+  Rendered partials/_navbar.html.erb (7.8ms)
+  Rendered profiles/show.html.erb within layouts/application (15.5ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::OPDecorator):
+     8:   <h2 style="text-align:center">Profile Details</h2>
+     9:   
+    10: <h2 style="text-align:center;">
+    11:   <%= OPDecorator.new(@profile).full_name %>
+    12: </h2>
+    13:   
+    14: <p>
+  
+app/views/profiles/show.html.erb:11:in `_app_views_profiles_show_html_erb___1432595918358545116_70029664494940'
+Started GET "/profiles/1" for 51.37.113.161 at 2019-03-31 18:27:00 +0000
+Cannot render console from 51.37.113.161! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendered devise/menu/_registration_items.html.erb (0.7ms)
+  Rendered devise/menu/_login_items.html.erb (2.1ms)
+  Rendered partials/_navbar.html.erb (7.4ms)
+  Rendered profiles/show.html.erb within layouts/application (15.4ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::OPDecorator):
+     8:   <h2 style="text-align:center">Profile Details</h2>
+     9:   
+    10: <h2 style="text-align:center;">
+    11:   <%= OPDecorator.new(@profile).full_name %>
+    12: </h2>
+    13:   
+    14: <p>
+  
+app/views/profiles/show.html.erb:11:in `_app_views_profiles_show_html_erb___1432595918358545116_70029609560500'
+Started GET "/profiles/1" for 51.37.113.161 at 2019-03-31 18:29:37 +0000
+Cannot render console from 51.37.113.161! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendered devise/menu/_registration_items.html.erb (0.6ms)
+  Rendered devise/menu/_login_items.html.erb (0.8ms)
+  Rendered partials/_navbar.html.erb (6.6ms)
+  Rendered profiles/show.html.erb within layouts/application (15.2ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::OPDecorator):
+     8:   <h2 style="text-align:center">Profile Details</h2>
+     9:   
+    10: <h2 style="text-align:center;">
+    11:   <%= OPDecorator.new(@profile).full_name %>
+    12: </h2>
+    13:   
+    14: <p>
+  
+app/views/profiles/show.html.erb:11:in `_app_views_profiles_show_html_erb___1432595918358545116_70029673498960'
+Started GET "/profiles/1" for 51.37.113.161 at 2019-03-31 18:33:00 +0000
+Cannot render console from 51.37.113.161! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendered devise/menu/_registration_items.html.erb (0.9ms)
+  Rendered devise/menu/_login_items.html.erb (1.0ms)
+  Rendered partials/_navbar.html.erb (7.1ms)
+  Rendered profiles/show.html.erb within layouts/application (16.4ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::OPDecorator):
+     8:   <h2 style="text-align:center">Profile Details</h2>
+     9:   
+    10: <h2 style="text-align:center;">
+    11:   <%= OPDecorator.new(@profile).full_name %>
+    12: </h2>
+    13:   
+    14: <p>
+  
+app/views/profiles/show.html.erb:11:in `_app_views_profiles_show_html_erb___1432595918358545116_70029676614600'
+Started GET "/profiles/1" for 51.37.113.161 at 2019-03-31 18:44:54 +0000
+Cannot render console from 51.37.113.161! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+SyntaxError (/home/ubuntu/workspace/app/controllers/profiles_controller.rb:16: syntax error, unexpected keyword_end, expecting ')'
+/home/ubuntu/workspace/app/controllers/profiles_controller.rb:100: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/profiles_controller.rb:16: syntax error, unexpected keyword_end, expecting ')'
+app/controllers/profiles_controller.rb:100: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/profiles/1" for 51.37.113.161 at 2019-03-31 18:45:15 +0000
+Cannot render console from 51.37.113.161! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (undefined method `before_filter' for ProfilesController:Class
+Did you mean?  before_action):
+  
+app/controllers/profiles_controller.rb:3:in `<class:ProfilesController>'
+app/controllers/profiles_controller.rb:1:in `<top (required)>'
+Started GET "/profiles/1" for 51.37.113.161 at 2019-03-31 18:45:39 +0000
+Cannot render console from 51.37.113.161! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Profile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendered devise/menu/_registration_items.html.erb (0.7ms)
+  Rendered devise/menu/_login_items.html.erb (0.8ms)
+  Rendered partials/_navbar.html.erb (12.1ms)
+  Rendered profiles/show.html.erb within layouts/application (19.0ms)
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 2.8ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::OPDecorator):
+     8:   <h2 style="text-align:center">Profile Details</h2>
+     9:   
+    10: <h2 style="text-align:center;">
+    11:   <%= OPDecorator.new(@profile).full_name %>
+    12: </h2>
+    13:   
+    14: <p>
+  
+app/views/profiles/show.html.erb:11:in `_app_views_profiles_show_html_erb___1432595918358545116_70029669551240'
+Started GET "/profiles/1" for 51.37.113.161 at 2019-03-31 18:45:46 +0000
+Cannot render console from 51.37.113.161! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendered devise/menu/_registration_items.html.erb (0.7ms)
+  Rendered devise/menu/_login_items.html.erb (0.9ms)
+  Rendered partials/_navbar.html.erb (9.7ms)
+  Rendered profiles/show.html.erb within layouts/application (16.5ms)
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 2.6ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::OPDecorator):
+     8:   <h2 style="text-align:center">Profile Details</h2>
+     9:   
+    10: <h2 style="text-align:center;">
+    11:   <%= OPDecorator.new(@profile).full_name %>
+    12: </h2>
+    13:   
+    14: <p>
+  
+app/views/profiles/show.html.erb:11:in `_app_views_profiles_show_html_erb___1432595918358545116_70029656241700'
+Started GET "/profiles/1" for 51.37.113.161 at 2019-03-31 18:46:28 +0000
+Cannot render console from 51.37.113.161! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendered devise/menu/_registration_items.html.erb (0.8ms)
+  Rendered devise/menu/_login_items.html.erb (0.7ms)
+  Rendered partials/_navbar.html.erb (5.9ms)
+  Rendered profiles/show.html.erb within layouts/application (17.2ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::OPDecorator):
+     8:   <h2 style="text-align:center">Profile Details</h2>
+     9:   
+    10: <!--<h2 style="text-align:center;">
+    11:   <!--<%= OPDecorator.new(@profile).full_name %>-->
+    12: </h2>
+    13:   
+    14: <p>
+  
+app/views/profiles/show.html.erb:11:in `_app_views_profiles_show_html_erb___1432595918358545116_70029672456460'
+Started GET "/profiles/1" for 51.37.113.161 at 2019-03-31 18:46:43 +0000
+Cannot render console from 51.37.113.161! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfile Load (0.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/show.html.erb within layouts/application
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendered devise/menu/_registration_items.html.erb (0.8ms)
+  Rendered devise/menu/_login_items.html.erb (0.8ms)
+  Rendered partials/_navbar.html.erb (6.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered profiles/show.html.erb within layouts/application (10.1ms)
+  Rendered partials/_footer.html.erb (0.6ms)
+Completed 200 OK in 66ms (Views: 60.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/profiles" for 51.37.113.161 at 2019-03-31 18:46:50 +0000
+Cannot render console from 51.37.113.161! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering profiles/index.html.erb within layouts/application
+  [1m[36mProfile Load (0.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  Rendered devise/menu/_registration_items.html.erb (0.6ms)
+  Rendered devise/menu/_login_items.html.erb (0.6ms)
+  Rendered partials/_navbar.html.erb (5.8ms)
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered profiles/index.html.erb within layouts/application (10.7ms)
+  Rendered partials/_footer.html.erb (0.7ms)
+Completed 200 OK in 59ms (Views: 53.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/profiles" for 51.37.113.161 at 2019-03-31 18:49:41 +0000
+Cannot render console from 51.37.113.161! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfilesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 1.6ms)
+
+
+  
+NoMethodError (undefined method `profiles' for #<User:0x007f621abfd258>
+Did you mean?  profile
+               profile=):
+  
+app/controllers/profiles_controller.rb:8:in `index'

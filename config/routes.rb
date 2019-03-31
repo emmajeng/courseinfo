@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :searches
+  resources :results
   resources :assignments
   resources :courses
   resources :profiles

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  keywords: MyString
+  student_name: MyString
+  result_min: 1
+  result_max: 1
+  comment: MyString
+  assignment: MyString
+
+two:
+  keywords: MyString
+  student_name: MyString
+  result_min: 1
+  result_max: 1
+  comment: MyString
+  assignment: MyString

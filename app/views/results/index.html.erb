@@ -1,0 +1,46 @@
+<%= render 'partials/navbar' %>
+<p id="notice"><%= notice %></p>
+<p id="alert"><%= alert %></p>
+
+<div class="form-wrap"> 
+<h1>Listing Results</h1>
+
+<%= form_tag results_path, :method => 'get' do %>
+<%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search Student" %>
+<% end %>
+
+<%= link_to "Advanced Search", new_search_path %>
+<br>
+<br>
+
+<table>
+  <thead>
+    <tr>
+      <th>Student name</th>
+      <th>Result percentage</th>
+      <th>Comment</th>
+      <th>Assignment</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @results.each do |result| %>
+      <tr>
+        <td><%= result.student_name %></td>
+        <td><%= result.result_percentage %></td>
+        <td><%= result.comment %></td>
+        <td><%= result.assignment.name %></td>
+        <td><%= link_to 'Show', result %></td>
+        <td><%= link_to 'Edit', edit_result_path(result) %></td>
+        <td><%= link_to 'Destroy', result, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Result', new_result_path %>
+</div>

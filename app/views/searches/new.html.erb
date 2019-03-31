@@ -1,0 +1,39 @@
+<%= render 'partials/navbar' %>
+<p id="notice"><%= notice %></p>
+<p id="alert"><%= alert %></p>
+
+<div class="form-wrap">  
+ 
+ <h1>Advanced Search</h1>
+ 
+ <%= form_for @search, html: {class: "pure-form"} do |s| %>
+ 
+ <div class="field">
+     <%= s.label :keywords %><br />
+     <%= s.text_field :keywords %>
+ </div>
+ 
+ <br>
+ 
+  <div class="field">
+     <%= s.label :result_min, "Min Result" %> - <%= s.text_field :result_min, size: 10 %>
+     <%= s.label :result_max, "Max Result" %> - <%= s.text_field :result_max, size: 10 %>
+ </div>
+ 
+ <br>
+ 
+  <div class="field">
+     <%= s.label :comment %><br />
+     <%= s.text_field :comment %>
+ </div>
+ 
+ <br>
+ 
+ <div class="actions"><%= s.submit "Search", class: "pure-button pure-button-primary" %></div>
+ 
+ <% end %>
+ 
+ <br>
+ 
+ <p><%= link_to 'Back', results_path %></p>
+ </div>

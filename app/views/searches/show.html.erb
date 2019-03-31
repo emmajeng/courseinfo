@@ -1,0 +1,26 @@
+<%= render 'partials/navbar' %>
+<p id="notice"><%= notice %></p>
+<p id="alert"><%= alert %></p>
+
+<div class="form-wrap"> 
+<h1>Search Results</h1>
+
+<p><%= link_to 'Back', new_search_path %></p>
+
+<% if @search.search_results.empty? %>
+
+    <p>No Records Found</p>
+    
+<% else %>
+
+<% @search.search_results.each do |c| %>
+    <br>
+    <div class="div">
+        <h3><%= c.student_name %></h1>
+        <h3>Min Result: <%= c.result_percentage %></h1>
+        <h3>Comment: <%= c.comment %></h1>
+    </div>
+    
+  <% end %>
+<% end %>
+</div>

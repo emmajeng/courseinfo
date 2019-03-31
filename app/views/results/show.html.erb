@@ -1,0 +1,31 @@
+<%= render 'partials/navbar' %>
+
+<p id="notice"><%= notice %></p>
+<p id="alert"><%= alert %></p>
+
+
+<div class="form-wrap">
+<p>
+  <strong>Student name:</strong>
+  <%= @result.student_name %>
+</p>
+
+<p>
+  <strong>Result percentage:</strong>
+  <%= @result.result_percentage %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @result.comment %>
+</p>
+
+<p>
+  <strong>Assignment:</strong>
+  <%= @result.assignment.name%>
+</p>
+
+<%= link_to 'Edit', edit_result_path(@result) %> |
+<%= link_to 'Back to All', results_path %> |
+<%= link_to 'Back to Assignment', assignment_path %>
+</div>

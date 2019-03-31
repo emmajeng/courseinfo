@@ -1,5 +1,5 @@
 
-<%= render 'layouts/navbar' %>
+<%= render 'partials/navbar' %>
 <p id="notice"><%= notice %></p>
 <p id="alert"><%= alert %></p>
 
@@ -22,10 +22,6 @@
   <%= @assignment.worth %>
 </p>
 
-<p>
-  <strong>Result:</strong>
-  <%= @assignment.result %>
-</p>
 
 <p>
   <strong>Course:</strong>
@@ -33,5 +29,35 @@
 </p>
 
 <%= link_to 'Edit', edit_assignment_path(@assignment) %> |
-<%= link_to 'Back', assignments_path %>
+<%= link_to 'Back to All', assignments_path %> |
+<%= link_to 'Back to Course', course_path %>
+
+<!-- Display the reviews of a movie -->
+
+<br>
+<br>
+
+<h2>Results</h2>
+
+
+<%= link_to 'New Result', new_result_path %>
+<br>
+
+<% @assignment.results.each do |result| %>
+<p>
+<hr>
+<p>
+  <strong>Student Name:</strong>
+  <%= result.student_name %>
+  <br>
+  <strong>Result Percentage:</strong>
+  <%= result.result_percentage %>
+  <br>
+   <td><%= link_to 'Show', result %></td>
+   <td><%= link_to 'Edit', edit_result_path(result) %></td>
+</p>
+</p>
+
+<% end %>
+
 </div>

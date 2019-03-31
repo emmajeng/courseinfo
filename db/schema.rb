@@ -10,13 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_26_173415) do
+ActiveRecord::Schema.define(version: 2019_03_31_101511) do
 
   create_table "assignments", force: :cascade do |t|
     t.string "name"
     t.datetime "due_date"
     t.string "worth"
-    t.string "result"
     t.integer "course_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -43,6 +42,25 @@ ActiveRecord::Schema.define(version: 2019_03_26_173415) do
     t.datetime "updated_at", null: false
     t.string "role"
     t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
+  create_table "results", force: :cascade do |t|
+    t.string "student_name"
+    t.integer "result_percentage"
+    t.string "comment"
+    t.integer "assignment_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["assignment_id"], name: "index_results_on_assignment_id"
+  end
+
+  create_table "searches", force: :cascade do |t|
+    t.string "keywords"
+    t.integer "result_min"
+    t.integer "result_max"
+    t.string "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
